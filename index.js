@@ -1,7 +1,7 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://chrisdamianm:ksdlZgmGPyFLkEla@cluster0.g5ecnwz.mongodb.net/?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://chrisdamianm:<password>@cluster0.g5ecnwz.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
