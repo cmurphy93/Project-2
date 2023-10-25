@@ -1,8 +1,9 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://chrisdamianm:seirproject2@cluster0.g5ecnwz.mongodb.net/?retryWrites=true&w=majority';
+const mongoURI = '';
 const db = mongoose.connection;
+const cookieParser = require('cookie-parser');
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -13,9 +14,12 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     }); 
 
 const app = express();
-const PORT = 8090 || process.env.PORT;
+const PORT = 8090;
 
+app.use("/Routers", express.Router);
 app.use(expressLayouts);
+app.use(cookieParser());
+
 app.set('layout', 'layouts/main');
 app.set('view engine', 'ejs');
 
